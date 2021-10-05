@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $(expr '(' $(date -d $(date +%Y)/12/25 +%s) - $(date +%s) ')' / 86400) -le 24 ]]; then
+    # advent calendar todo
+    echo ""i
+elif [[ $(expr '(' $(date -d $(date +%Y)/12/25 +%s) - $(date +%s) ')' / 86400) -eq 0 ]]; then
+    figlet -f big Merry Christmas! 2> /dev/null
+    echo "Happy observed birthday, Jesus!"
+else
+    echo $(expr '(' $(date -d $(date +%Y)/12/25 +%s) - $(date +%s) ')' / 86400) "days until Christmas"
+fi
